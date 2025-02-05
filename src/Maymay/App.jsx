@@ -1,16 +1,16 @@
-import React from 'react';
-import './App.css';
+// import React from 'react';
+// import './App.css';
 
-import Content from './Componant/Content';
-import Top from './Componant/Top';
+// import Content from './Componant/Content';
+// import Top from './Componant/Top';
 
-const App = () => {
-  return (
-    <div>
-      <Top/>
-      <Content/>
+// const App = () => {
+//   return (
+//     <div>
+//       <Top/>
+//       <Content/>
       
-    </div>
-  );
-};
-export default App;
+//     </div>
+//   );
+// };
+// export default App;

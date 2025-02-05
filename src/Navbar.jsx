@@ -1,8 +1,8 @@
+
 import { useState, useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 import { FaBars, FaTimes, FaUser, FaQuestionCircle, FaBell, FaBook, FaGlobe } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import translations from "./translations"; // Import translations
 
 function Navbar() {
   const { language, toggleLanguage } = useContext(LanguageContext);
@@ -12,8 +12,9 @@ function Navbar() {
     <>
       {/* Navbar */}
       <nav className="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-primary">
-          SIT Booking
+        <Link to="/" className="flex items-center space-x-2">
+          <img src="/image/logosIT1.png" alt="Logo" className="w-16 h-16" />
+          <p className="text-2xl font-bold text-primary">Booking</p>
         </Link>
         <div className="flex items-center space-x-4">
           {/* Language Switcher */}
@@ -22,7 +23,7 @@ function Navbar() {
             className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
           >
             <FaGlobe className="text-blue-500" />
-            <span>{translations[language].language}</span>
+            <span>{language === "th" ? "ภาษาไทย" : "English"}</span>
           </button>
 
           {/* Menu Button */}
@@ -34,7 +35,7 @@ function Navbar() {
 
       {/* Sidebar / Mobile Menu */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-opacity-10 backdrop-blur-md z-50 flex justify-end">
+        <div className="fixed top-0 left-0 w-full h-full bg-opacity-10 backdrop-blur-lg z-50 flex justify-end">
           <div className="w-4/5 sm:w-1/3 bg-white shadow-lg h-full p-6 space-y-6 rounded-lg">
             {/* Close Button */}
             <div className="flex justify-between items-center">
@@ -46,11 +47,11 @@ function Navbar() {
 
             {/* Menu Items */}
             <div className="space-y-4">
-              <MenuItem icon={<FaUser />} label={translations[language].profile} />
-              <MenuItem icon={<FaQuestionCircle />} label={translations[language].feedback} />
-              <MenuItem icon={<FaBell />} label={translations[language].notifications} />
-              <MenuItem icon={<FaBook />} label={translations[language].guide} />
-
+              <MenuItem icon={<FaUser />} label={language === "th" ? "โปรไฟล์" : "Profile"} />
+              <MenuItem icon={<FaQuestionCircle />} label={language === "th" ? "ขอเสนอแนะ" : "Feedback"} />
+              <MenuItem icon={<FaBell />} label={language === "th" ? "แจ้งเตือน" : "Notifications"} />
+              <MenuItem icon={<FaBook />} label={language === "th" ? "คู่มือ" : "Guide"} />
+              
               {/* Language Switcher in Sidebar */}
               <button
                 onClick={toggleLanguage}
@@ -58,7 +59,7 @@ function Navbar() {
               >
                 <div className="flex items-center space-x-2">
                   <FaGlobe className="text-blue-500" />
-                  <span>{translations[language].language}</span>
+                  <span>{language === "th" ? "ภาษาไทย" : "English"}</span>
                 </div>
               </button>
             </div>
@@ -78,3 +79,4 @@ const MenuItem = ({ icon, label }) => (
 );
 
 export default Navbar;
+
