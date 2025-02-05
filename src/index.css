@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* เพิ่มเงาและ Animation */
 .shadow-lg {
     transition: all 0.3s ease-in-out;
