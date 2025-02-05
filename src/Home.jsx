@@ -47,21 +47,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white p-6 mt-10 w-full text-center">
-        <div className="flex flex-col sm:flex-row items-center justify-between px-4">
-          <img src="/images/sit_logo.png" alt="SIT Logo" className="w-20" />
-          <p className="text-sm">
-            +662 470 9850 <br />
-            126 ถนนประชาอุทิศ เขตบางมด เขตทุ่งครุ กรุงเทพฯ 10140 <br />
-            webadmin@sit.kmutt.ac.th <br />
-            @sit.kmutt
-          </p>
-          <a href="https://sit.kmutt.ac.th" className="text-blue-300 underline">
-            SIT WEBSITE
-          </a>
-        </div>
-      </footer>
+     
     </div>
   );
 }

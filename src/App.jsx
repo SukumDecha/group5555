@@ -5,6 +5,7 @@ import Home from "./Home";
 import Booking from "./Booking";
 import Welcome from "./Welcome";
 import Calendar from "./Calendar";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </Router>
     </LanguageProvider>
+    <Footer/>
     </div>
   );
 }
