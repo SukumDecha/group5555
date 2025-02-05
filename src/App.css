@@ -59,3 +59,7 @@ nav h1 {
   transform: translateX(-50%);
 }
 
+img {
+  max-height: 48px;
+  object-fit: contain;
+}

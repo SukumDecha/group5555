@@ -10,7 +10,15 @@
     transition: transform 0.3s ease-in-out;
   }
   
-  .menu.open {
-    transform: translateX(0);
+  img {
+    max-height: 48px;
+    object-fit: contain;
   }
   
+ 
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: 10px; 
