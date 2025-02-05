@@ -14,11 +14,6 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center bg-blue-200 min-h-screen">
-      {/* Welcome Section */}
-      <div className="w-full h-48 bg-primary flex items-center justify-center text-black text-2xl font-bold">
-        {language === "th" ? "ยินดีต้อนรับ!" : "Welcome to the Room SITBooking!"}
-      </div>
-
       {/* Booking Location Section */}
       <div className="w-full max-w-5xl mt-8 px-6">
         <h2 className="text-white text-xl font-bold bg-blue-900 py-2 px-6 rounded-lg inline-block">
@@ -28,9 +23,9 @@ function Home() {
         {/* Location Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {[
-            { name: "CB2 Building", img: "/images/cb2.jpg" },
-            { name: "LX Building", img: "/images/lx.jpg" },
-            { name: "SIT Building", img: "/images/sit.jpg" },
+            { name: "CB2 Building", img: "/image/cb2.png" },
+            { name: "LX Building", img: "/image/lx.png" },
+            { name: "SIT Building", img: "/image/sit.png" },
           ].map((building, index) => (
             <div 
               key={index} 
