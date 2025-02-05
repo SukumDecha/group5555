@@ -1,10 +1,16 @@
+
 import { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
-import { Link } from "react-router-dom";
-import { FaBuilding } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const { language } = useContext(LanguageContext);
+  const navigate = useNavigate(); // ใช้ navigate เพื่อเปลี่ยนหน้า
+
+  // ฟังก์ชันเมื่อคลิกรูปภาพให้ไปหน้า Booking
+  const handleBooking = (building) => {
+    navigate(`/booking?location=${encodeURIComponent(building)}`);
+  };
 
   return (
     <div className="flex flex-col items-center bg-blue-200 min-h-screen">
@@ -13,28 +19,53 @@ function Home() {
         {language === "th" ? "ยินดีต้อนรับ!" : "Welcome to the Room SITBooking!"}
       </div>
 
-      {/* Building Selection */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 px-6 w-full max-w-5xl">
-        {["CB2 Building", "LX Building", "SIT Building"].map((building, index) => (
-          <Link key={index} to="/booking" className="block bg-white shadow-md rounded-lg overflow-hidden">
-            <img
-              src={`https://source.unsplash.com/400x300/?building&sig=${index}`}
-              alt={building}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-4 flex items-center">
-              <FaBuilding className="text-blue-500 mr-2" />
-              <h3 className="text-lg font-semibold">{building}</h3>
+      {/* Booking Location Section */}
+      <div className="w-full max-w-5xl mt-8 px-6">
+        <h2 className="text-white text-xl font-bold bg-blue-900 py-2 px-6 rounded-lg inline-block">
+          {language === "th" ? "สถานที่ในการจอง" : "Booking Location"}
+        </h2>
+
+        {/* Location Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+          {[
+            { name: "CB2 Building", img: "/images/cb2.jpg" },
+            { name: "LX Building", img: "/images/lx.jpg" },
+            { name: "SIT Building", img: "/images/sit.jpg" },
+          ].map((building, index) => (
+            <div 
+              key={index} 
+              className="bg-white shadow-lg rounded-lg overflow-hidden p-4 cursor-pointer transition transform hover:scale-105 hover:shadow-2xl"
+              onClick={() => handleBooking(building.name)}
+            >
+              <img 
+                src={building.img} 
+                alt={building.name} 
+                className="w-full h-40 object-cover rounded-lg"
+              />
+              <div className="mt-3">
+                <select className="w-full bg-blue-500 text-white p-2 rounded-lg text-center">
+                  <option>{building.name}</option>
+                </select>
+              </div>
             </div>
-          </Link>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white p-6 mt-10 w-full text-center">
-        <p>{language === "th" ? "จองห้องประชุมที่ SIT" : "SIT Booking System"}</p>
-        <p>126 ถนนประชาอุทิศ เขตทุ่งครุ กรุงเทพฯ 10140</p>
-        <p>Email: webadmin@sit.kmutt.ac.th</p>
+        <div className="flex flex-col sm:flex-row items-center justify-between px-4">
+          <img src="/images/sit_logo.png" alt="SIT Logo" className="w-20" />
+          <p className="text-sm">
+            +662 470 9850 <br />
+            126 ถนนประชาอุทิศ เขตบางมด เขตทุ่งครุ กรุงเทพฯ 10140 <br />
+            webadmin@sit.kmutt.ac.th <br />
+            @sit.kmutt
+          </p>
+          <a href="https://sit.kmutt.ac.th" className="text-blue-300 underline">
+            SIT WEBSITE
+          </a>
+        </div>
       </footer>
     </div>
   );

@@ -55,7 +55,7 @@ function Navbar() {
               {/* Language Switcher in Sidebar */}
               <button
                 onClick={toggleLanguage}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
+                className="w-full flex items-center justify-between px-4 py-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
               >
                 <div className="flex items-center space-x-2">
                   <FaGlobe className="text-blue-500" />
