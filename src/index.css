@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* เพิ่มเงาและ Animation */
+.shadow-lg {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .shadow-lg:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+  
