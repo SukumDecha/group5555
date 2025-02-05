@@ -11,16 +11,16 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center">
+      <nav className="w-full py-4 px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="public/image/logoSIT1.png" alt="Logo" className="w-30 h-15" />
+          <img src="/image/logoSIT1.png" alt="Logo" className="w-30 h-15" />
           <p className="text-2xl font-bold text-primary">Booking</p>
         </Link>
         <div className="flex items-center space-x-4">
           {/* Language Switcher */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
+            className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:text-blue-600 transition"
           >
             <FaGlobe className="text-blue-500" />
             <span>{language === "th" ? "ภาษาไทย" : "English"}</span>

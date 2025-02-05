@@ -14,11 +14,6 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center bg-blue-200 min-h-screen">
-      {/* Welcome Section */}
-      <div className="w-full h-48 bg-primary flex items-center justify-center text-black text-2xl font-bold">
-        {language === "th" ? "ยินดีต้อนรับ!" : "Welcome to the Room SITBooking!"}
-      </div>
-
       {/* Booking Location Section */}
       <div className="w-full max-w-5xl mt-8 px-6">
         <h2 className="text-white text-xl font-bold bg-blue-900 py-2 px-6 rounded-lg inline-block">
@@ -28,9 +23,9 @@ function Home() {
         {/* Location Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {[
-            { name: "CB2 Building", img: "/images/cb2.jpg" },
-            { name: "LX Building", img: "/images/lx.jpg" },
-            { name: "SIT Building", img: "/images/sit.jpg" },
+            { name: "CB2 Building", img: "/image/cb2.png" },
+            { name: "LX Building", img: "/image/lx.png" },
+            { name: "SIT Building", img: "/image/sit.png" },
           ].map((building, index) => (
             <div 
               key={index} 
@@ -52,21 +47,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white p-6 mt-10 w-full text-center">
-        <div className="flex flex-col sm:flex-row items-center justify-between px-4">
-          <img src="/images/sit_logo.png" alt="SIT Logo" className="w-20" />
-          <p className="text-sm">
-            +662 470 9850 <br />
-            126 ถนนประชาอุทิศ เขตบางมด เขตทุ่งครุ กรุงเทพฯ 10140 <br />
-            webadmin@sit.kmutt.ac.th <br />
-            @sit.kmutt
-          </p>
-          <a href="https://sit.kmutt.ac.th" className="text-blue-300 underline">
-            SIT WEBSITE
-          </a>
-        </div>
-      </footer>
+     
     </div>
   );
 }
