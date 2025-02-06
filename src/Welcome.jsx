@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-export const Welcome = () => {
+const Welcome = () => {
   return (
-    <div className="relative w-full flex justify-center mt-5">
-          <img src="/image/sit2.jpg" alt=""
-          className="relative w-[1200px] h-[356px] rounded-[13.88px] overflow-hidden object-cover "/>
+    <div className="relative flex justify-center w-full px-16">
+      <img
+        src="/image/sit2.jpg"
+        alt="Welcome Image"
+        className="w-full max-w-[3600px] h-auto rounded-3xl shadow-2xl"
+      />
     </div>
-  )
-}
+  );
+};
+
 export default Welcome;
