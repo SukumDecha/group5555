@@ -22,6 +22,12 @@ const Calendar = () => {
       {/* Header */}
       <div className="flex justify-between items-center bg-blue-900 text-white p-3 rounded-md">
         <h2 className="text-lg font-semibold">📅 Upcoming Booking</h2>
+        <button
+          className="bg-white text-blue-700 px-3 py-1 text-sm rounded-full border border-yellow-500 hover:bg-yellow-100 transition"
+          onClick={() => navigate("/EditBooking")}
+        >
+          Edit
+        </button>
       </div>
 
       {/* Month Selector */}
