@@ -1,28 +1,26 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { LanguageProvider } from "./LanguageContext";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import Booking from "./Booking";
-import Welcome from "./Welcome";
-import Calendar from "./Calendar";
-import Footer from "./Footer";
+import Navbar from "./components/Navbar";  
+import Footer from "./components/Footer";
+import Home from "./pages/Home";  
+import BookingPage from "./pages/BookingPage";
+import EditBooking from "./pages/EditBooking";
+import MyBookings from "./pages/MyBookings";  
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
-    <div className='bg-gradient-to-b from-blue-50 to-blue-300'>
     <LanguageProvider>
       <Router>
         <Navbar />
-        <Welcome/>
-        <Calendar/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/edit-booking" element={<EditBooking />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
         </Routes>
+        <Footer />
       </Router>
     </LanguageProvider>
-    <Footer/>
-    </div>
   );
 }
 
