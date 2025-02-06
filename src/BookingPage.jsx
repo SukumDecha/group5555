@@ -14,7 +14,7 @@ const BookingPage = () => {
     setSelectedTime(time);
     setBookingPopupOpen(true);
   };
-
+ 
   return (
     <div className="container full-screen flex flex-col items-center">
       
