@@ -1,23 +1,35 @@
 import { useState } from "react";
-import BookingTable from "../components/BookingTable";
-import BookingPopup from "../components/BookingPopup";
-import RoomSelector from "../components/RoomSelector";
+import Calendar from "./Calendar";
+import BookingTable from "./BookingTable";
+import RoomSelector from "./RoomSelector";
+import BookingPopup from "./BookingPopup";
 
 const BookingPage = () => {
-  const [selectedTime, setSelectedTime] = useState(null);
   const [selectedRoom, setSelectedRoom] = useState("CB2");
+  const [selectedFloor, setSelectedFloor] = useState("10th Floor");
+  const [selectedTime, setSelectedTime] = useState(null);
   const [isBookingPopupOpen, setBookingPopupOpen] = useState(false);
 
-  const handleSlotClick = (time, room) => {
+  const handleSlotClick = (time) => {
     setSelectedTime(time);
-    setSelectedRoom(room);
     setBookingPopupOpen(true);
   };
 
   return (
-    <div className="p-6">
-      <RoomSelector selectedRoom={selectedRoom} setSelectedRoom={setSelectedRoom} />
-      <BookingTable onSlotClick={handleSlotClick} selectedRoom={selectedRoom} />
+    <div className="container full-screen flex flex-col items-center">
+      
+      {/* ✅ Dropdown เลือกอาคารและชั้น */}
+      <div className="w-full max-w-2xl flex justify-center mt-4">
+        <RoomSelector selectedRoom={selectedRoom} setSelectedRoom={setSelectedRoom}
+                      selectedFloor={selectedFloor} setSelectedFloor={setSelectedFloor} />
+      </div>
+
+      {/* ✅ ตารางเวลาที่สามารถกดเลือกจองได้ */}
+      <div className="w-full max-w-3xl flex justify-center mt-4">
+        <BookingTable selectedRoom={selectedRoom} onSlotClick={handleSlotClick} />
+      </div>
+
+      {/* ✅ Popup จอง */}
       {isBookingPopupOpen && <BookingPopup time={selectedTime} room={selectedRoom} onClose={() => setBookingPopupOpen(false)} />}
     </div>
   );

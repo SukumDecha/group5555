@@ -23,3 +23,50 @@
     display: flex; 
     gap: 10px; 
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .full-screen {
+    min-height: 100vh; /* ให้สูงเต็มหน้าจอ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendar-container {
+    width: 1200px; /* กำหนดความกว้างให้เท่ากับภาพ */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+  }
+
+  .calendar-container {
+    max-width: 90%; /* ป้องกันไม่ให้ใหญ่เกินไป */
+  }
+  
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 คอลัมน์ */
+    gap: 10px;
+  }
+  
