@@ -6,7 +6,7 @@ const Welcome = () => {
       <img
         src="/image/sit2.jpg"
         alt="Welcome Image"
-        className="w-full max-w-[3600px] h-auto rounded-3xl shadow-2xl"
+        className="w-full max-w-[1800px] h-auto rounded-3xl shadow-2xl"
       />
     </div>
   );
