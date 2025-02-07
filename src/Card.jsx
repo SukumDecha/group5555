@@ -4,8 +4,8 @@ const Card = () => {
   return (
     <Card.Root maxW="sm" overflow="hidden">
       <Image
-        src="image/CB2.png"
-        alt=""
+        src="/image/CB2.png"
+        alt="Green double couch with wooden legs"
       />
       <Card.Body gap="2">
         <Card.Title>Living room Sofa</Card.Title>
@@ -24,4 +24,3 @@ const Card = () => {
     </Card.Root>
   )
 }
-export default Card;

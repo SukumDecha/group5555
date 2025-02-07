@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-import { Card } from "@chakra-ui/react";
 import EditBooking from "./EditBooking";
-
+import Button from "@mui/material/Button";
+import { Button as ChakraButton } from '@chakra-ui/react';
+import {CardRoot,Card} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 
 const Calendar = () => {
   const [currentYear, setCurrentYear] = useState(2025);
@@ -24,7 +26,10 @@ const Calendar = () => {
     setDays([...Array(totalDays)].map((_, i) => i + 1));
   }, [currentMonth, currentYear]);
   
+
   return (
+    <>
+  
     <div className="w-full max-w-4xl mx-auto mt-5 p-6 bg-white shadow-lg rounded-lg">
       {/* Header */}
       <div className="flex justify-between items-center bg-blue-900 text-white p-3 rounded-md">
@@ -70,8 +75,32 @@ const Calendar = () => {
         })}
       </div> 
     </div>
-    
+    <div>
+    <CardRoot axW="sm" overflow="hidden">
+          <Image
+            src="/image/cb2.png"
+            alt=""
+          />
+          <Card.Body gap="2">
+          <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2">
+            CB2
+          </Text>
+            <Card.Description>
+            Options for booking.
+            </Card.Description>
+            
+          </Card.Body>
+          <Card.Footer gap="2">
+            <Button variant="solid">Booking</Button>
+            
+          </Card.Footer>
+  
+    </CardRoot>
+    </div>
+    </>
   );
-};
-
+  
+  
+    
+}
 export default Calendar;
