@@ -6,10 +6,13 @@ import Booking from "./Booking";
 import Welcome from "./Welcome";
 import Calendar from "./Calendar";
 import Footer from "./Footer";
+import BasicButtons from "./button";
+
 
 function App() {
   return (
-    <div className='bg-gradient-to-b from-blue-50 to-blue-300'>
+    <>
+        <div className='bg-gradient-to-b from-blue-50 to-blue-300'>
     <LanguageProvider>
       <Router>
         <Navbar />
@@ -22,7 +25,11 @@ function App() {
       </Router>
     </LanguageProvider>
     <Footer/>
+    <BasicButtons />
+    
     </div>
+    </>
+
   );
 }
 

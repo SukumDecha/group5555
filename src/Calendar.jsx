@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
+import { Card } from "@chakra-ui/react";
+import EditBooking from "./EditBooking";
+
 
 const Calendar = () => {
   const [currentYear, setCurrentYear] = useState(2025);
   const [currentMonth, setCurrentMonth] = useState(0);
   const [days, setDays] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null); 
+  const navigate = useNavigate(); 
+
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -16,12 +23,19 @@ const Calendar = () => {
     const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
     setDays([...Array(totalDays)].map((_, i) => i + 1));
   }, [currentMonth, currentYear]);
-
+  
   return (
     <div className="w-full max-w-4xl mx-auto mt-5 p-6 bg-white shadow-lg rounded-lg">
       {/* Header */}
       <div className="flex justify-between items-center bg-blue-900 text-white p-3 rounded-md">
         <h2 className="text-lg font-semibold">📅 Upcoming Booking</h2>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => navigate("/edit-booking")} 
+        >
+          Edit
+        </Button>
       </div>
 
       {/* Month Selector */}
@@ -54,8 +68,9 @@ const Calendar = () => {
             </div>
           );
         })}
-      </div>
+      </div> 
     </div>
+    
   );
 };
 
