@@ -7,6 +7,7 @@ import Welcome from "./Welcome";
 import Calendar from "./Calendar";
 import Footer from "./Footer";
 import BasicButtons from "./button";
+import EditBooking from "./EditBooking";
 
 
 function App() {
@@ -17,15 +18,18 @@ function App() {
       <Router>
         <Navbar />
         <Welcome/>
+
         <Calendar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="Calendar" element={<Calendar />} />
+          <Route path="/edit-booking" element={<EditBooking />} />
         </Routes>
+
       </Router>
     </LanguageProvider>
     <Footer/>
-    <BasicButtons />
     
     </div>
     </>
