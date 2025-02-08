@@ -5,19 +5,19 @@ const bookedSlots = { CB2: ["10:00"], LX: ["14:00"], SIT: ["15:00"] };
 
 const BookingTable = ({ selectedRoom }) => {
   return (
-    <div className="bg-white shadow-lg p-6 mt-6 rounded-lg w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-4xl p-6 mx-auto mt-6 bg-white rounded-lg shadow-lg">
       <h3 className="text-lg font-semibold text-center text-blue-900">Booking Schedule for {selectedRoom}</h3>
-      <table className="w-full border-collapse mt-4">
+      <table className="w-full mt-4 border-collapse">
         <thead>
-          <tr className="bg-blue-600 text-white">
-            <th className="border p-2">Time</th>
-            <th className="border p-2">Status</th>
+          <tr className="text-white bg-blue-600">
+            <th className="p-2 border">Time</th>
+            <th className="p-2 border">Status</th>
           </tr>
         </thead>
         <tbody>
           {timeSlots.map((time) => (
             <tr key={time} className="text-center">
-              <td className="border p-3">{time}</td>
+              <td className="p-3 border">{time}</td>
               <td
                 className={`border p-3 cursor-pointer ${
                   bookedSlots[selectedRoom]?.includes(time) ? "bg-red-200" : "hover:bg-green-200"
