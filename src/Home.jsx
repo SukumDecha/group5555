@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
-  const [selectedBuilding, setSelectedBuilding] = useState(["LX Building"]);
+  const [selectedBuilding, setSelectedBuilding] = useState("LX Building");
   const [selectedFloor, setSelectedFloor] = useState("10th Floor");
 
   const handleBooking = () => {
@@ -27,7 +27,7 @@ function Home() {
       {/* 🔹 Dropdown เลือกอาคารและชั้น */}
       <div className="flex flex-col md:flex-row items-center mt-6 space-x-4">
         <select
-          className="bg-blue-500 text-black p-2 rounded-lg"
+          className="bg-blue-500 text-white p-2 rounded-lg"
           value={selectedBuilding}
           onChange={(e) => setSelectedBuilding(e.target.value)}
         >
@@ -37,7 +37,7 @@ function Home() {
         </select>
 
         <select
-          className="bg-blue-500 text-black p-2 rounded-lg"
+          className="bg-blue-500 text-white p-2 rounded-lg"
           value={selectedFloor}
           onChange={(e) => setSelectedFloor(e.target.value)}
         >
@@ -97,6 +97,7 @@ function Home() {
           </div>
         </div>
       )}
+=======
     </div>
   );
 }

@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import RoomList from "./RoomList";
-import getRooms from "./GetRoom";
+import { useState } from "react";
+import Calendar from "./Calendar";
+import BookingTable from "./BookingTable";
+import RoomSelector from "./RoomSelector";
+import BookingPopup from "./BookingPopup";
 
 const BookingPage = () => {
   const [selectedRoom, setSelectedRoom] = useState("CB2");
