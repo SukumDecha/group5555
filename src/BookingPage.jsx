@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import RoomList from "./RoomList";
@@ -18,6 +19,20 @@ const BookingPage = () => {
   const [selectedTime, setSelectedTime] = useState(null);
   const [isBookingPopupOpen, setBookingPopupOpen] = useState(false);
 
+=======
+import { useState } from "react";
+import Calendar from "./Calendar";
+import BookingTable from "./BookingTable";
+import RoomSelector from "./RoomSelector";
+import BookingPopup from "./BookingPopup";
+
+const BookingPage = () => {
+  const [selectedRoom, setSelectedRoom] = useState("CB2");
+  const [selectedFloor, setSelectedFloor] = useState("10th Floor");
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [isBookingPopupOpen, setBookingPopupOpen] = useState(false);
+
+>>>>>>> parent of 1359fbc (Merge pull request #51 from ludacapo4646/group22)
   const handleSlotClick = (time) => {
     setSelectedTime(time);
     setBookingPopupOpen(true);

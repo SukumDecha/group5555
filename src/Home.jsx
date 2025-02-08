@@ -66,6 +66,7 @@ function Home() {
         ))}
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       {selectedBuilding && (
         <div className="absolute top-0 left-0 w-full h-screen flex justify-center items-center bg-gray-900 bg-opacity-10">
@@ -98,6 +99,8 @@ function Home() {
           </div>
         </div>
       )}
+=======
+>>>>>>> parent of 1359fbc (Merge pull request #51 from ludacapo4646/group22)
 =======
 >>>>>>> parent of 1359fbc (Merge pull request #51 from ludacapo4646/group22)
     </div>
