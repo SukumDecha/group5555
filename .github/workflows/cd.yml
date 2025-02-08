@@ -1,0 +1,29 @@
+name: Deployment Preview CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  vite-build:
+    name: Build Vite Frontend
+    runs-on: self-hosted
+    container: node:lts
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies and build Vite project
+        run: |
+          npm ci
+          npm run build
+
+      - name: Debug build output
+        run: ls -R ./dist
+
+      - name: Upload Vite build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-build-artifact
+          path: ./dist
