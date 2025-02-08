@@ -47,7 +47,7 @@ export default function Home() {
               <button
                 className="bg-green-500 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
                 disabled={!selectedFloor}
-                onClick={() => navigate(`/booking?location=${selectedBuilding.location}&floor=${selectedFloor}`)}
+                onClick={() => navigate(`/bookingpage`)}
               >
                 เลือกห้อง
               </button>

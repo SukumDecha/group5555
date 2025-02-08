@@ -6,6 +6,7 @@ import Booking from "./Booking";
 import Welcome from "./Welcome";
 import Calendar from "./Calendar";
 import Footer from "./Footer";
+import BookingPage from "./BookingPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/bookingpage" element={<BookingPage />} />
         </Routes>
       </Router>
     </LanguageProvider>
