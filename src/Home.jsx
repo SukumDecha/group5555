@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
-  const [selectedBuilding, setSelectedBuilding] = useState("LX Building");
+  const [selectedBuilding, setSelectedBuilding] = useState(["LX Building"]);
   const [selectedFloor, setSelectedFloor] = useState("10th Floor");
 
   const handleBooking = () => {
@@ -72,7 +72,7 @@ function Home() {
             <h2 className="text-xl font-bold text-center">{selectedBuilding.name}</h2>
             <p className="mt-2 text-center">กรุณาเลือกชั้น:</p>
             <div className="flex justify-center gap-2 mt-3">
-              {selectedBuilding.floors.map((floor) => (
+              {selectedBuilding.map((floor) => (
                 <button
                   key={floor}
                   className={`px-4 py-2 rounded-lg ${selectedFloor === floor ? "bg-blue-500 text-white" : "bg-gray-200"}`}
