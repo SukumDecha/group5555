@@ -27,3 +27,36 @@ jobs:
         with:
           name: vite-build-artifact
           path: ./dist
+
+  deploy:
+    name: Deploy To Preview Server
+    runs-on: self-hosted
+    timeout-minutes: 10
+    container: alpine
+    needs: [vite-build]
+    env:
+      REMOTE_SFTP_LOGIN: ${{ secrets.REMOTE_SFTP_LOGIN }}
+      REMOTE_SSH_ARGS: ${{ secrets.REMOTE_SSH_ARGS }}
+      REMOTE_SSH_PASSWORD: ${{ secrets.REMOTE_SSH_PASSWORD }}
+      REMOTE_SFTP_HOST: ${{ secrets.REMOTE_SFTP_HOST }}
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: vite-build-artifact
+          path: ./artifact
+
+      - name: Debug downloaded artifacts
+        run: ls -R ./artifact
+
+      - name: Install required tools
+        run: |
+          apk add openssh-client sshpass lftp
+
+      - name: Create directory on server
+        run: |
+          sshpass -p "$REMOTE_SSH_PASSWORD" ssh "$REMOTE_SSH_ARGS" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "mkdir -p ~/hippo-frontend"
+
+      - name: Upload artifacts to server
+        run: |
+          lftp -d -e "set sftp:auto-confirm yes; set net:timeout 60; set net:max-retries 2; set net:reconnect-interval-base 5; debug 3; open "$REMOTE_SFTP_LOGIN"; mirror -v --reverse --delete ./artifact ~/hippo-frontend; bye"
