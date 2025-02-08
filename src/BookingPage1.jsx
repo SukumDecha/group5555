@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import BookingTable from "./BookingTable";
 import RoomSelector from "./RoomSelector";
@@ -35,3 +36,4 @@ const BookingPage = () => {
 };
 
 export default BookingPage;
+

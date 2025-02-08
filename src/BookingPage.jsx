@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import RoomList from "./RoomList";
-import { getRooms } from "./api";
-import { useLocation } from "react-router-dom";
+import getRooms from "./GetRoom";
+
 
 function BookingPage() {
   const location = useLocation();
