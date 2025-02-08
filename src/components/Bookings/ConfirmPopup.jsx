@@ -1,23 +1,33 @@
 import React from "react";
 
-const ConfirmPopup = ({ time, room, onClose }) => {
-  return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
-        <h3 className="text-lg font-semibold">ยืนยันการจอง</h3>
-        <p className="text-gray-600">เวลา: {time}</p>
-        <p className="text-gray-600">ห้อง: {room}</p>
-        <div className="flex justify-between mt-4">
-          <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={onClose}>
-            ปิด
-          </button>
-          <button className="bg-green-500 text-white px-4 py-2 rounded" onClick={() => alert("Booking Confirmed!")}>
-            เสร็จสิ้น
-          </button>
+const ConfirmPopup = ({ room, timeIn, timeOut, onClose, onConfirm }) => {
+    return (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white p-6 rounded-md shadow-md w-96">
+                <h2 className="text-xl font-bold text-gray-800">✅ ยืนยันการจอง</h2>
+                <p className="mt-2 text-gray-700">
+                    📍 ห้อง: <b>{room}</b>
+                </p>
+                <p className="mt-2 text-gray-700">
+                    ⏰ เวลา: <b>{timeIn} - {timeOut}</b>
+                </p>
+
+                {/* 🔹 ปุ่ม */}
+                <div className="mt-6 flex justify-between">
+                    <button onClick={onClose} className="bg-gray-400 text-white px-4 py-2 rounded-md">
+                        ❌ ยกเลิก
+                    </button>
+                    <button
+                        onClick={onConfirm}
+                        className="bg-green-500 text-white px-4 py-2 rounded-md"
+                    >
+                        ✅ ยืนยัน
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ConfirmPopup;
+

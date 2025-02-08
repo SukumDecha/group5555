@@ -1,13 +1,11 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { LanguageProvider } from "./context/LanguageContext"; // ✅ Fixed Path
-import "./styles/index.css"; // ✅ Moved to styles folder
-import App from "./App"; // ✅ No need for `.jsx` extension
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./styles/index.css"; // ✅ แก้ path ของ index.css ให้ถูกต้อง
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  </StrictMode>
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
