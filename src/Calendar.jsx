@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import EditBooking from "./EditBooking";
 import Button from "@mui/material/Button";
@@ -6,14 +9,18 @@ import { Button as ChakraButton } from '@chakra-ui/react';
 import {CardRoot,Card} from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
 
 const Calendar = () => {
   const [currentYear, setCurrentYear] = useState(2025);
   const [currentMonth, setCurrentMonth] = useState(0);
   const [days, setDays] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null); 
-  const navigate = useNavigate(); 
-
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -25,7 +32,16 @@ const Calendar = () => {
     const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
     setDays([...Array(totalDays)].map((_, i) => i + 1));
   }, [currentMonth, currentYear]);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
 
   return (
     <>
@@ -34,13 +50,6 @@ const Calendar = () => {
       {/* Header */}
       <div className="flex justify-between items-center bg-blue-900 text-white p-3 rounded-md">
         <h2 className="text-lg font-semibold">📅 Upcoming Booking</h2>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          onClick={() => navigate("/edit-booking")} 
-        >
-          Edit
-        </Button>
       </div>
 
       {/* Month Selector */}
@@ -73,8 +82,11 @@ const Calendar = () => {
             </div>
           );
         })}
-      </div> 
+      </div>
     </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     <div>
     <CardRoot axW="sm" overflow="hidden">
           <Image
@@ -98,6 +110,12 @@ const Calendar = () => {
     </CardRoot>
     </div>
     </>
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
   );
   
   

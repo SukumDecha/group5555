@@ -6,17 +6,25 @@ import Booking from "./Booking";
 import Welcome from "./Welcome";
 import Calendar from "./Calendar";
 import Footer from "./Footer";
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 import BookingPage from "./BookingPage";
 
 import EditBooking from "./EditBooking";
 
 
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
 
 function App() {
   return (
-    <>
-        <div className='bg-gradient-to-b from-blue-50 to-blue-300'>
+    <div className='bg-gradient-to-b from-blue-50 to-blue-300'>
     <LanguageProvider>
       <Router>
         <Navbar />
@@ -37,10 +45,17 @@ function App() {
       </Router>
     </LanguageProvider>
     <Footer/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
+=======
+>>>>>>> parent of 67f5cfc (Noy Errorrrr)
     </div>
-    </>
-
   );
 }
 
