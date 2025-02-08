@@ -1,4 +1,4 @@
-import BookingPage from "./BookingPage1";
+import BookingPage from "./BookingPage";
 
 function Booking() {
   return <BookingPage />;
