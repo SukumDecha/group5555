@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BookingTable from "./BookingTable1";
+import BookingTable from "./BookingTable";
 import RoomSelector from "./RoomSelector";
 import BookingPopup from "./BookingPopup";
 
