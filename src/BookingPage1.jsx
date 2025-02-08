@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import Calendar from "./Calendar";
 import BookingTable from "./BookingTable";
 import RoomSelector from "./RoomSelector";
 import BookingPopup from "./BookingPopup";
@@ -17,16 +16,16 @@ const BookingPage = () => {
   };
  
   return (
-    <div className="container full-screen flex flex-col items-center">
+    <div className="container flex flex-col items-center full-screen">
       
       {/* ✅ Dropdown เลือกอาคารและชั้น */}
-      <div className="w-full max-w-2xl flex justify-center mt-4">
+      <div className="flex justify-center w-full max-w-2xl mt-4">
         <RoomSelector selectedRoom={selectedRoom} setSelectedRoom={setSelectedRoom}
                       selectedFloor={selectedFloor} setSelectedFloor={setSelectedFloor} />
       </div>
 
       {/* ✅ ตารางเวลาที่สามารถกดเลือกจองได้ */}
-      <div className="w-full max-w-3xl flex justify-center mt-4">
+      <div className="flex justify-center w-full max-w-3xl mt-4">
         <BookingTable selectedRoom={selectedRoom} onSlotClick={handleSlotClick} />
       </div>
 

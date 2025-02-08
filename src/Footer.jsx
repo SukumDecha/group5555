@@ -24,7 +24,7 @@ const Footer = () => {
               SIT WEBSITE
             </a>
           </div>
-  
+        
         </div>
       </footer>
     );
