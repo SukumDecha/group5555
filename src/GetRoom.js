@@ -1,4 +1,4 @@
- function getRooms(selectedLocation, selectedFloor) {
+function getRooms(selectedLocation, selectedFloor) {
         return new Promise((resolve, reject) => {
           // Mockup data
           const rooms = [
